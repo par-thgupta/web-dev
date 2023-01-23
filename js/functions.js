@@ -31,5 +31,21 @@ console.log("connected");
 
 // 4)
 // arrow function
-const sum = (x,y)=>{return (x+y);};
-console.log(sum(2,4));
+// const sum = (x,y)=>{return (x+y);};
+// console.log(sum(2,4));
+
+
+
+// higher order function
+
+function fun1(funsion){
+    console.log("inside fun1");
+    console.log(fun2);
+    fun2();
+}
+
+function fun2(){
+    console.log("inside fun2");
+    // fun1(); ----------------> infinite loop (;
+}
+fun1(fun2);
