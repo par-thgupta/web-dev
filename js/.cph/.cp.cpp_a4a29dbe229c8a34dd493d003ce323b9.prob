@@ -1,0 +1,1 @@
+{"name":"Local: cp","url":"f:\\codingblockes\\web-dev\\js\\cp.cpp","tests":[{"id":1674458273656,"input":"()()()","output":"3"},{"id":1674458283401,"input":"(()(()))","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\codingblockes\\web-dev\\js\\cp.cpp","group":"local","local":true}
