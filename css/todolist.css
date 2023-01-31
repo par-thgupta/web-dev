@@ -1,0 +1,25 @@
+input{
+    border-top: 0px;
+    outline: none;
+}
+.heading{
+    margin: 50px 0 0 0;
+    text-align: center;
+}
+#addButton{
+    margin-left: 30px;
+}
+#Input{
+    width: 80%;
+    height: 5vh;
+}
+.container{
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top : 5vh;
+}
+
+li{
+    list-style-type: none;  
+}

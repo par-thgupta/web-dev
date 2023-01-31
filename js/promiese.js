@@ -1,34 +1,88 @@
-// const x = new Promise(function(resolve,reject){
-//     setTimeout(() => {
-        
+// let newpromise = new Promise(function (resolve, reject) {
+//     let rn = Math.random();
+//     console.log(rn);
+//     if (rn < 0.5) resolve();
+//     else reject();
+// });
+// newpromise.then(function () {
+//     console.log("Function is resolve");
+// })
+//     .catch(function () {
+//         console.log("Function is reject");
+//     })
+
+
+
+
+
+
+
+
+// or function can return the promise 
+
+
+// fun(()=>{
+//     return new Promise((resolve,reject) => {
 //         let rn = Math.random();
 //         console.log(rn);
-//         if(rn > 0.5)resolve();
+//         if (rn < 0.5) resolve();
 //         else reject();
-//     }, 2000);
+//     });
+// })
+
+
+// fun().then(
+//     function () {
+//         console.log("Function is resolve");
+//     }
+// ).catch(function () {
+//     console.log("Function is reject");
 // });
 
-// x.then(function(){
-//     console.log("Inside resolve")
-// })
-// .catch(function(){
-//     console.log("Inside reject")
-// })
 
 
 
-fun = ()=>{
-    return new Promise ((reject,resolve)=>{
+
+
+
+
+
+
+
+
+function downloadFile(url){
+    return new Promise(function(resolve,reject){
+        console.log(`File is started downloading for ${url}`);
         setTimeout(() => {
-            let rn = Math.random();
-            console.log(rn);
-            if(rn > 0.5)resolve();
-            else reject();
+            const profile = url.split('/').pop();
+            resolve(profile);
         }, 2000);
-    })
+    });
+};
+function compressFile(profile){
+    return new Promise(function(resolve,reject){
+        console.log(`File is started compressing for ${profile}`);
+        setTimeout(() => {
+            const compress = profile.replace("jpg","zip");
+            resolve(compress);
+        }, 3000);
+    });
+};
+function uploadFile(profile){
+    return new Promise(function(resolve,reject){
+        console.log(`file is starting uploading for ${profile}`);
+        setTimeout(() => {
+            const upload = "https://localsystem/"+profile;
+            resolve(upload);
+        }, 2000);
+    });
 }
-fun().then(function(){
-    console.log('promises resolve.')
-}).catch(function(){
-    console.log('promises reject.')
+downloadFile("https://facebook.com/profile.jpg")
+.then(compressFile)
+.then(uploadFile)
+.then((upload)=>{
+    console.log(`File upload succesfull at ${upload}`);
+    console.log("Successfull");
+}).catch((error)=>{
+    console.log(`Something went wrong ${error}`);
 });

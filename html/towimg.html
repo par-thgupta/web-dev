@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display image</title>
+</head>
+<body>
+    <h1>Display two different image</h1>    
+
+    <img src="/js/cocmachine.jpg"  width = "500px" alt="img not found">
+    <script>
+        // let x = setInterval(() =>{
+        //     setTimeout(() => {
+        //         let x = document.querySelector('img')
+        //         x.setAttribute('src','/js/cocmachine.jpg');
+        //     }, 0);
+        //     setTimeout(() => {
+            //         let x = document.querySelector('img')
+            //         x.setAttribute('src','/js/cocWallpaper.webp');
+            //     }, 1000);
+            // },2000)
+            
+            // ------------------------or-------------------good js------------------
+            const i = document.querySelector('img')
+            chk = true
+            function changeImg(){
+                
+                if(chk){
+                    i.setAttribute('src','/js/cocWallpaper.webp');
+                }
+                else{
+                    i.setAttribute('src','/js/cocmachine.jpg');
+                }
+            chk = !chk
+        }
+        setInterval(changeImg, 500.2);
+    </script>
+</body>
+</html>

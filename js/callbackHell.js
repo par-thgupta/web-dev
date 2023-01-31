@@ -6,11 +6,9 @@ downloadFile("https://online.codingblocks.com/app/player/253200/content/251980/1
         console.log(`file compress successfull : ${Compresspath}`);   
         uploadFile(Compresspath,function(uploadpath){
             console.log(`file uploaded successfull : ${uploadpath}`);   
-        })
-    })
+        });
+    });
 });
-
-
 
 let downloadFile = (url,download)  =>{
     console.log(`start file download for ${url}`);
