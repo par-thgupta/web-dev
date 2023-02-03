@@ -1,0 +1,132 @@
+<!-- div.comtainer{box $}*10 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .calculator {
+            margin-left: 20vw;
+            margin-top: 2vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #ANS {
+            color: black;
+            background-color: red;
+        }
+
+        #inputID {
+            height: 60px;
+            width: 796px;
+            font-size: 40px;
+            outline: none;
+            background-color: black;
+            color: white;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 200px);
+            text-align: center;
+        }
+
+        .item {
+            font-family: 'IBM Plex Mono', monospace;
+            padding-top: 30px;
+            height: 60px;
+            border: 1px solid white;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <div class="calculator">
+        <div class="input"><input type="text" id="inputID"></div>
+        <div class="container">
+            <div id="AC" class="item">AC</div>
+            <div id="Delete" class="item">Delete</div>
+            <div id="%" class="item">%</div>
+            <div id="divide" class="item">/</div>
+            <div id="7" class="item">7</div>
+            <div id="8" class="item">8</div>
+            <div id="9" class="item">9</div>
+            <div id="multiply" class="item">X</div>
+            <div id="4" class="item">4</div>
+            <div id="5" class="item">5</div>
+            <div id="6" class="item">6</div>
+            <div id="-" class="item">-</div>
+            <div id="1" class="item">1</div>
+            <div id="2" class="item">2</div>
+            <div id="3" class="item">3</div>
+            <div id="+" class="item">+</div>
+            <div id="R" class="item">R</div>
+            <div id="0" class="item">0</div>
+            <div id="." class="item">.</div>
+            <div id="ANS" class="item">ANS</div>
+        </div>
+    </div>
+    <script>
+        console.log("connected");
+
+
+
+        let item = document.getElementsByClassName('item');
+
+        for (let i of item) {
+            i.addEventListener('click', (text) => {
+                let input = text.target.innerText;
+                let inputtest = document.getElementById("inputID");
+                if (input == 'AC') {
+                    inputtest.value = "";
+                    return;
+                }
+                else if (input == 'Delete') {
+                    let newinpLength = inputtest.value.length;
+                    let newinp = inputtest.value.slice(0, newinpLength - 1);
+                    inputtest.value = newinp;
+                    return;
+                }
+                else if (input == 'X') {
+                    input = '*';
+                }
+                else if (input == '&#247;') {
+                    input = '/';
+                }
+                else if (input == 'R') {
+                    alert("Developed by : THE PARTH")
+                    return;
+                }
+                else if (input == 'ANS') {
+                    let ans = eval(inputtest.value);
+                    inputtest.value = ans;
+                    console.log(ans);
+                    return;
+                }
+                inputtest.value += input;
+            });
+        }
+    </script>
+</body>
+
+</html>
