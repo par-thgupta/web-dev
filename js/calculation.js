@@ -3,8 +3,8 @@ console.log("connected");
 
 
 let item = document.getElementsByClassName('item');
-
 for (let i of item) {
+
     i.addEventListener('click', (text) => {
         let input = text.target.innerText;
         let inputtest = document.getElementById("inputID");
