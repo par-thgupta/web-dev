@@ -31,11 +31,11 @@
 // })
 
 
-// fun().then(
-//     function () {
+// fun()
+//     .then(function () {
 //         console.log("Function is resolve");
-//     }
-// ).catch(function () {
+//     })
+//     .catch(function () {
 //     console.log("Function is reject");
 // });
 
